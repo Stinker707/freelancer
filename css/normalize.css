@@ -4,6 +4,6 @@ body {
     color: #070707;
 }
 
-a {
-    /* color: #000; */
+a, img {
+    display: block;
 }
