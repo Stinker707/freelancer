@@ -52,11 +52,16 @@
     justify-content: space-between;
     column-gap: 50px;
 
+    @media (max-width: 768px) {
+        display: none;
+    }
+
     &__link {
         font-size: 14px;
         font-weight: 500;
         color: #000;
         text-decoration: none;
+
         &:hover {
             color: #606060;
         }
@@ -66,12 +71,27 @@
 .first-screen {
     height: 770px;
 
+    @media (max-width: 1024px) {
+        height: 624px;
+    }
+
+    @media (max-width:768px) {
+        height: auto;
+    }
+
     &__container {
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 30px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 125px;
+        }
     }
 
     &__content {
@@ -83,26 +103,64 @@
 
     &__img {
         align-self: flex-end;
+
+        @media (max-width: 1024px) {
+            height: 500px;
+        }
+
+        @media (max-width: 768px) {
+            height: 394px;
+        }
+
+        @media (max-width: 375px) {
+            height: 330px;
+            align-self: flex-start;
+        }
     }
 
     &__title {
         font-weight: 600;
         font-size: 44px;
+
+        @media (max-width: 1024px) {
+            font-size: 25px;
+        }
+
+        @media (max-width:768px) {
+            font-size: 33px;
+        }
+        @media (max-width: 425px) {
+            font-size: 28px;
+        }
+
+        @media (max-width: 375px) {
+            font-size: 23px;
+        }
     }
 
     &__description {
-        font-size: 400;
+        font-weight: 400;
         line-height: 2;
         font-size: 14px;
+
+        @media(max-width: 375px) {
+            font-size: 12px;
+        }
     }
 }
 
 .features {
+
     display: flex;
     column-gap: 30px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        row-gap: 60px;
+    }
 }
 
-.features-card { 
+.features-card {
     &__title {
         font-weight: 600;
         font-size: 24px;
@@ -131,6 +189,11 @@
     align-items: center;
     gap: 40px;
 
+    &__img {
+        max-width: 100%;
+        height: auto;
+    }
+
     &__link {
         font-weight: 400;
         font-size: 18px;
@@ -143,12 +206,12 @@
     }
 }
 
-.footer { 
+.footer {
     &__container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        }
+    }
 
     &__text {
         text-align: center;
@@ -188,10 +251,14 @@
     justify-content: center;
     column-gap: 60px;
     transition: transform 0.5s ease;
+
+    @media (max-width: 375px) {
+        column-gap: 30px;
+    }
 }
 
 .footer-social-link {
     &:hover {
-        transform: scale(1.25); 
+        transform: scale(1.25);
     }
 }
