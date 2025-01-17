@@ -43,6 +43,30 @@
         align-items: flex-end;
         justify-content: space-between;
         column-gap: 50px;
+
+        @media (max-width: 768px) {
+            align-items: center;
+        }
+    }
+}
+
+.header-menu {
+
+    @media (max-width: 768px) {
+            display: none;
+
+            &--is-visible {
+                position: absolute;
+                z-index: 1;
+                background: #fff;
+                top: 0;
+                right: 0;
+                left: 0;
+                padding: 100px;
+                height: 100vh;
+            
+                display: block;
+        }
     }
 }
 
@@ -53,7 +77,11 @@
     column-gap: 50px;
 
     @media (max-width: 768px) {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 30px;
     }
 
     &__link {
@@ -62,12 +90,68 @@
         color: #000;
         text-decoration: none;
 
+        @media (max-width: 768px) {
+            font-size: 34px;
+            font-weight: 600;
+            color: #828282;
+        }
+
         &:hover {
             color: #606060;
+            @media (max-width: 768px) {
+                color: #000000;
+            }
         }
     }
 }
 
+.header-mobi-close-btn {
+    display: none;
+    background-color: unset;
+
+    @media (max-width: 768px) {
+        $self: &;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 1;
+        width: 34px;
+        height: 20px;
+    
+        &--is-active {
+            #{$self} {
+                &__line {
+                    &:nth-child(1) {
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 50%;
+                        background: #828282;
+                    }
+    
+                    &:nth-child(2) {
+                        display: none;
+                    }
+    
+                    &:nth-child(3) {
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: 50%;
+                        background: #828282;
+                    }
+                }
+            }
+        }
+    }
+
+    &__line {
+        transition: all linear 0.1s;
+        background: black;
+        height: 4px;
+        width: 34px;
+    }
+}
+    
 .first-screen {
     height: 770px;
 
@@ -129,6 +213,7 @@
         @media (max-width:768px) {
             font-size: 33px;
         }
+
         @media (max-width: 425px) {
             font-size: 28px;
         }
