@@ -7,6 +7,7 @@
 
 button {
   border: none;
+  background-color: unset;
 }
 
 body {
@@ -30,14 +31,14 @@ button {
   margin: 0 auto;
 }
 
-.section {
-  padding: 90px 0;
-}
 .section--has-bg {
   background-color: #F1F1F1;
 }
-
-.section-title {
+.section__container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.section__title {
   text-align: center;
   line-height: 51px;
   font-weight: 600;
@@ -57,7 +58,6 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  padding: 46px 0;
 }
 .header__container {
   display: flex;
@@ -65,18 +65,17 @@ button {
   justify-content: space-between;
   -moz-column-gap: 50px;
        column-gap: 50px;
+  padding-top: 46px;
+  padding-bottom: 46px;
 }
 @media (max-width: 768px) {
   .header__container {
     align-items: center;
   }
 }
-
 @media (max-width: 768px) {
-  .header-menu {
+  .header__menu {
     display: none;
-  }
-  .header-menu--is-visible {
     position: absolute;
     z-index: 1;
     background: #fff;
@@ -85,6 +84,8 @@ button {
     left: 0;
     padding: 100px;
     height: 100vh;
+  }
+  .header__menu--is-visible {
     display: block;
   }
 }
@@ -127,12 +128,11 @@ button {
   }
 }
 
-.header-mobi-close-btn {
+.header-close-btn {
   display: none;
-  background-color: unset;
 }
 @media (max-width: 768px) {
-  .header-mobi-close-btn {
+  .header-close-btn {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -141,27 +141,31 @@ button {
     width: 34px;
     height: 20px;
   }
-  .header-mobi-close-btn--is-active .header-mobi-close-btn__line:nth-child(1) {
-    transform: rotate(45deg);
+  .header-close-btn--is-active {
+    --header-close-btn-line-bg: #828282;
+  }
+  .header-close-btn--is-active:hover {
+    --header-close-btn-line-bg: black;
+  }
+  .header-close-btn--is-active .header-close-btn__line {
     position: absolute;
     top: 50%;
-    background: #828282;
   }
-  .header-mobi-close-btn--is-active .header-mobi-close-btn__line:nth-child(2) {
+  .header-close-btn--is-active .header-close-btn__line:nth-child(1) {
+    transform: rotate(45deg);
+  }
+  .header-close-btn--is-active .header-close-btn__line:nth-child(2) {
     display: none;
   }
-  .header-mobi-close-btn--is-active .header-mobi-close-btn__line:nth-child(3) {
+  .header-close-btn--is-active .header-close-btn__line:nth-child(3) {
     transform: rotate(-45deg);
-    position: absolute;
-    top: 50%;
-    background: #828282;
   }
-}
-.header-mobi-close-btn__line {
-  transition: all linear 0.1s;
-  background: black;
-  height: 4px;
-  width: 34px;
+  .header-close-btn__line {
+    transition: all linear 0.1s;
+    background: var(--header-close-btn-line-bg, black);
+    height: 4px;
+    width: 34px;
+  }
 }
 
 .first-screen {
@@ -192,7 +196,7 @@ button {
     padding-top: 125px;
   }
 }
-.first-screen__content {
+.first-screen__text-block {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -291,8 +295,11 @@ button {
   gap: 40px;
 }
 .projects-card__img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+.projects-card__img:hover {
+  transform: scale(0.95);
 }
 .projects-card__link {
   font-weight: 400;
@@ -313,21 +320,28 @@ button {
   text-align: center;
   margin-top: 40px;
   font-size: 18px;
-  font-weight: 400;
-  color: #070707;
 }
 .footer__btn {
   margin-top: 41px;
   background-color: #070707;
   border-radius: 21px;
+  border: 2px solid #070707;
   color: #FFF;
   padding: 9px 28px;
   font-size: 18px;
   font-weight: 400;
-  transition: 0.5s;
+  transition: background-color 0.5s, color 0.5s;
 }
 .footer__btn:hover {
-  background-color: #828282;
+  animation: pulse 0.8s;
+  background-color: transparent;
+  color: #070707;
+  box-shadow: 0 0 20px 20px transparent;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #070707;
+  }
 }
 .footer__feedback {
   margin-top: 32px;
@@ -343,7 +357,6 @@ button {
   justify-content: center;
   -moz-column-gap: 60px;
        column-gap: 60px;
-  transition: transform 0.5s ease;
 }
 @media (max-width: 375px) {
   .footer-social-links {
@@ -352,6 +365,9 @@ button {
   }
 }
 
+.footer-social-link {
+  transition: transform 0.4s ease;
+}
 .footer-social-link:hover {
   transform: scale(1.25);
 }/*# sourceMappingURL=main.css.map */

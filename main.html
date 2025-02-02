@@ -8,10 +8,10 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="hidden">Kelvin</h1>
         <div class="container header__container">
+            <h1 class="hidden">Kelvin</h1>
             <img class="header__logo" src="./img/logo.png" alt="logo">
-            <div class="header-menu">
+            <div class="header__menu" id="header-menu">
                 <nav class="header-nav">
                     <a class="header-nav__link" href="#">Home</a>
                     <a class="header-nav__link" href="#">Works</a>
@@ -20,16 +20,16 @@
                     <a class="header-nav__link" href="#">Contact</a>
                 </nav>
             </div>
-            <button class="header-mobi-close-btn" id="close-btn">
-                <div class="header-mobi-close-btn__line"></div>
-                <div class="header-mobi-close-btn__line"></div>
-                <div class="header-mobi-close-btn__line"></div>
+            <button class="header-close-btn" id="close-btn">
+                <div class="header-close-btn__line"></div>
+                <div class="header-close-btn__line"></div>
+                <div class="header-close-btn__line"></div>
             </button>
         </div>
     </header>
-    <section class="first-screen section--has-bg">
+    <section class="first-screen section section--has-bg">
         <div class="container first-screen__container">
-            <div class="first-screen__content">
+            <div class="first-screen__text-block">
                 <h2 class="first-screen__title">Kelvin Kramer <br> Designer & Developer</h2>
                 <p class="first-screen__description">I’m a portrait, fashion and lifestyle photographer living In New York City. During my thirteen year tenure here.
                 </p>  
@@ -38,9 +38,8 @@
         </div>
     </section>
     <section class="section">
-        <div class="container">
+        <div class="container section__container">
             <h2 class="hidden">Skills</h2>
-            <!-- features -->
             <div class="features"> 
                 <div class="features-card">
                     <img src="icons/icon-1.svg" alt="UI/UX Design">
@@ -61,27 +60,27 @@
         </div>
     </section>
     <section class="section section--has-bg">
-        <div class="container">
-            <h2 class="section-title">Portfolio</h2>
+        <div class="section__container container">
+            <h2 class="section__title">Portfolio</h2>
             <div class="projects">
                 <div class="projects-card">
-                    <img class="projects-card__img" src="img/projects-img-1.jpg" alt="Online fashion store">
+                    <a href="#"><img class="projects-card__img" src="img/projects-img-1.jpg" alt="Online fashion store"></a>
                     <a class="projects-card__link" href="#">Online fashion store - Homepage</a> 
                 </div>
                 <div class="projects-card">
-                    <img class="projects-card__img" src="img/projects-img-2.jpg" alt="Reebok Store ">
+                    <a href="#"><img class="projects-card__img" src="img/projects-img-2.jpg" alt="Reebok Store "></a>
                     <a class="projects-card__link" href="#">Reebok Store - Concept</a>
                 </div>
                 <div class="projects-card">
-                    <img class="projects-card__img" src="img/projects-img-3.jpg" alt="Braun Landing Page">
+                    <a href="#"><img class="projects-card__img" src="img/projects-img-3.jpg" alt="Braun Landing Page"></a>
                     <a class="projects-card__link" href="#">Braun Landing Page - Concept</a>
                 </div>
             </div>
         </div>
     </section>
     <footer class="section footer">
-        <div class="container footer__container">
-            <h2 class="section-title">Contacts</h2>
+        <div class="container section__container footer__container">
+            <h2 class="section__title">Contacts</h2>
             <p class="footer__text">Want to know more or just chat? <br>
             You are welcome!</p>
             <button class="footer__btn">Send message</button>

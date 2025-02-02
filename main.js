@@ -5,10 +5,10 @@
 //     menuMobi.classList.toggle('header-mobi__menu--is-visible');
 // }
 
-const navMenu = document.querySelector('.header-menu');
+const navMenu = document.querySelector('#header-menu');
 const btn = document.querySelector('#close-btn');
 
 btn.onclick = () => {
-    navMenu.classList.toggle('header-menu--is-visible');
-    btn.classList.toggle('header-mobi-close-btn--is-active');
+    navMenu.classList.toggle('header__menu--is-visible');
+    btn.classList.toggle('header-close-btn--is-active');
 }
